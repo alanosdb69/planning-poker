@@ -6,8 +6,10 @@ Application de planning poker réalisée dans le cadre d'un projet du cours de c
 Pour lancer l'application :
 ```bash
 python main.py
+```
 
 ## Structure du backlog JSON
+
 ```json
 {
   "projet": "Nom du projet",

@@ -46,13 +46,9 @@ def saisir_joueurs() -> list[str]:
 
 def lancer_application():
     print(" Démarrage Planning Poker ")
-    
-    # 1. Saisie des joueurs
     joueurs = saisir_joueurs()
     partie = creer_partie(joueurs)
     print(f"\nPartie initialisée avec {len(partie['joueurs'])} joueurs : {', '.join(partie['joueurs'])}.")
-
-    # 2. Chargement du backlog
     chemin_json = "exemples/backlog.json"
     print(f"\nChargement du backlog depuis '{chemin_json}'...")
     try:

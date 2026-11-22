@@ -1,3 +1,4 @@
+
 CARTES_FIBONACCI = [0, 1, 2, 3, 5, 8, 13, 20, 40, 100]
 
 
@@ -52,3 +53,4 @@ def evaluer_votes(votes: list, regle: str, tour: int) -> tuple:
         raise ValueError(f"Règle inconnue : {regle}")
 
     return REGLES_DISPONIBLES[regle](votes)
+    # Ajouter une nouvelle règle consiste uniquement à ajouter une fonction et une entrée dans REGLES_DISPONIBLES sans modifier les règles existantes.

@@ -52,3 +52,4 @@ def evaluer_votes(votes: list, regle: str, tour: int) -> tuple:
         raise ValueError(f"Règle inconnue : {regle}")
 
     return REGLES_DISPONIBLES[regle](votes)
+    #PR

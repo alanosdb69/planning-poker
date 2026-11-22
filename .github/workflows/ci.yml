@@ -1,0 +1,35 @@
+#Nom du workflow 
+name: CI
+
+#On lance la vérification à chaque push ou pull request sur la branche main
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+#GitHub autorise le lancement de l'application 
+permissions:
+  contents: read
+
+#On liste les tests à faire
+jobs:
+  test:
+    #On utilise un serveur linux pour lancer les tests 
+    runs-on: ubuntu-latest
+
+    #On exécute les tests sur le serveur
+    steps:
+      # On récupère le code source de notre dépôt GitHub
+      - uses: actions/checkout@v4
+
+      # On installe Python 3.12 sur le serveur
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # On installe les pré-requis du projet 
+      - run: pip install -r requirements.txt
+
+      #On lance tous nos tests 
+      - run: pytest
